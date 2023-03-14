@@ -1,2 +1,2 @@
-web: unset PORT && bin/rails server
-js: yarn build --watch
+web: bin/rails server -p 3000
+vite: bin/vite dev --clobber
