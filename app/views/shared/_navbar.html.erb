@@ -9,7 +9,7 @@
       <li><a href="/movies">My Movies</a></li>
       <li><a href="/lists">My Lists</a></li>
       <li><a href="">Profile</a></li>
-      <li><a href="/logout" data-method="delete">Log Out</a></li>
+      <li><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
       <%# <li><a href="/login">Log In</a></li>
       <li><a href="/signup">Sign Up</a></li> %>
     </ul>
