@@ -3,12 +3,6 @@ require "json"
 
 puts "Cleaning up database..."
 Movie.destroy_all
-Movie.destroy_all
-Movie.destroy_all
-Movie.destroy_all
-Movie.destroy_all
-Movie.destroy_all
-Movie.destroy_all
 puts "Database cleaned"
 
 BASE_URL = "https://api.themoviedb.org/3"

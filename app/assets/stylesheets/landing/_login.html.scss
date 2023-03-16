@@ -1,0 +1,113 @@
+body {
+  background-image: url("https://github.com/orenccs/watchlist-on-steroids/blob/master/app/assets/images/forrest%20gump%20project.jpeg?raw=true" );
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: center;
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 40%;
+  align-self: center;
+  margin-top: 140px ;
+  background-color: rgba($color: #ffffff, $alpha: 0.75);
+  border-radius: 15px;
+
+
+
+
+
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .form {
+      flex: 0 0 48%;
+      margin-bottom: 2rem;
+    }
+
+    form h2 {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: transparent;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: transparent;
+    }
+
+    input[type="submit"]:focus {
+      background-color: transparent;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    #chocolate-text {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+      margin-top: 20px;
+      position: absolute;
+      top: 75px;
+      left: 10px;
+
+    }
+
+  }
+
+}
