@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_115033) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_105605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_115033) do
     t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
   end
 
+  create_table "genre_movies", force: :cascade do |t|
+    t.bigint "movie_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_genre_movies_on_genre_id"
+    t.index ["movie_id"], name: "index_genre_movies_on_movie_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -65,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_115033) do
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "actors"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -93,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_115033) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "movies"
+  add_foreign_key "genre_movies", "genres"
+  add_foreign_key "genre_movies", "movies"
   add_foreign_key "reviews", "lists"
-
 end

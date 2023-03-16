@@ -78,3 +78,8 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "sassc-rails"
 gem "devise"
+gem "httparty"
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'dotenv'
+gem 'filterrific'

@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :list
-  validates :rating, presence: true
+  belongs_to :list, dependent: :destroy
+  validates :rating, presence: true, dependent: :destroy
 end

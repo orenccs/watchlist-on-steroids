@@ -7,8 +7,13 @@
     "@popperjs/core": "^2.11.6",
     "autoprefixer": "^10.4.14",
     "bootstrap": "^5.2.3",
+    "esbuild": "^0.17.11",
+    "jquery-ujs": "^1.2.3",
     "postcss": "^8.4.21",
-    "postcss-scss": "^4.0.6"
+    "postcss-scss": "^4.0.6",
+    "star-rating.js": "^4.3.0",
+    "tom-select": "^2.2.2",
+    "turbolinks": "^5.2.0"
   },
   "scripts": {},
   "devDependencies": {
@@ -16,7 +21,11 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-tailwindcss": "^3.10.1",
+    "jquery": "^3.6.4",
     "path": "^0.12.7",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.4",
     "sass": "^1.59.3",
     "vite": "^4.0.0",
