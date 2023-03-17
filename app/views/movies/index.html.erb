@@ -1,52 +1,43 @@
-
-<div class="filters-container">
-  <form action="/movies" method="get">
-    <label for="sort_by">Sort By:</label>
-    <select name="sort_by" id="sort_by">
-      <option value="title_asc">Title (A-Z)</option>
-      <option value="title_desc">Title (Z-A)</option>
-      <option value="release_date_asc">Release Date (Oldest First)</option>
-      <option value="release_date_desc">Release Date (Newest First)</option>
-      <option value="rating_desc">Rating (Highest First)</option>
-      <option value="rating_asc">Rating (Lowest First)</option>
-    </select>
-    <label for="keywords">Keywords:</label>
-    <input type="text" name="keywords" id="keywords">
-    <label for="release_year">Release Year:</label>
-    <input type="text" name="release_year" id="release_year">
-    <label for="genre">Genre:</label>
-    <select name="genre" id="genre">
-      <option value="">All Genres</option>
-      <% Genre.all.each do |genre| %>
-        <option value="<%= genre.name %>"><%= genre.name %></option>
-      <% end %>
-    </select>
-    <input type="submit" value="Filter">
-  </form>
-</div>
-  <% @movies.each do |movie| %>
-
-
-
-<div class="movie-container">
- <%= link_to movie_path(movie) do %>
-    <div class="movie-box">
-      <%= image_tag movie.poster_url %>
-      <div class="movie-title"><%= movie.title %></div>
-      <div class="movie-rating">
-        <% 10.times do |i| %>
-          <% if i < movie.rating %>
-            <i class="fa-solid fa-star"></i>
-          <% else %>
-            <i class="far fa-star"></i>
-          <% end %>
+<div class="full-page">
+  <div class="filters-container">
+    <form action="/movies" method="get">
+      <select name="sort_by" id="sort_by">
+        <option value="rating_desc">Rating (Highest First)</option>
+        <option value="rating_asc">Rating (Lowest First)</option>
+      </select>
+      <input type="text" name="keywords" id="keywords">
+      <select name="genre" id="genre">
+        <option value="">All Genres</option>
+        <% Genre.all.each do |genre| %>
+          <option value="<%= genre.name %>"><%= genre.name %></option>
         <% end %>
+      </select>
+      <input type="submit" value="Filter">
+    </form>
+  </div>
+  <div class="movie-container">
+
+  <% @movies.each do |movie| %>
+    <%= link_to movie_path(movie) do %>
+      <div class="movie-box">
+        <%= image_tag movie.poster_url, class: "movie-poster" %>
+        <div class="movie-title"><%= movie.title %></div>
+        <div class="movie-rating">
+          <% 10.times do |i| %>
+            <% if i < movie.rating %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="movie-overview">
+          <p><strong>Actors:</strong> <%= movie.actors %></p>
+          <p><%= movie.overview %></p>
+        </div>
       </div>
-      <div class="movie-overview">
-        <%= movie.overview %>
-        <p><strong>Actors:</strong> <%= movie.actors %></p>
-      </div>
-    </div>
-   <% end %>
+    <% end %>
   <% end %>
+</div>
+
 </div>

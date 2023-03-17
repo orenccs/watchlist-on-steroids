@@ -1,4 +1,4 @@
 class GenreMovie < ApplicationRecord
-  belongs_to :movie, dependent: :destroy
-  belongs_to :genre, dependent: :destroy
+  belongs_to :movie
+  belongs_to :genre
 end

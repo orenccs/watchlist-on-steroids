@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
       @movies = @movies.where("title LIKE ? OR overview LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%")
     end
     @movies = @movies.where("release_date LIKE ?", "#{params[:release_year]}%") if params[:release_year].present?
+
     @movies = @movies.by_genre(params[:genre]) if params[:genre].present?
 
     respond_to do |format|

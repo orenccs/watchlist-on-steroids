@@ -4,9 +4,10 @@ require 'openssl'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 puts 'Cleaning up database...'
+pp Movie.count
 Movie.destroy_all
 puts 'Database cleaned'
-
+pp Movie.count
 BASE_URL = 'https://api.themoviedb.org/3'
 API_KEY = ENV['TMDB_API_KEY']
 
@@ -20,7 +21,6 @@ movies.each do |movie_data|
   # Fetch movie details
   url = "#{BASE_URL}/movie/#{movie_data['id']}?api_key=#{API_KEY}"
   details = JSON.parse(URI.open(url).read)
-  pp details
   # Fetch movie trailer
   url = "#{BASE_URL}/movie/#{movie_data['id']}/videos?api_key=#{API_KEY}"
   trailers = JSON.parse(URI.open(url).read)['results']

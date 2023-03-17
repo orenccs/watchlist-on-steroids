@@ -19,23 +19,23 @@
 @import "config/bootstrap_variables"; */
 
 
-@import "shared/_navbar.scss";
-@import "shared/_search.scss";
-@import "pages/_show.scss";
-@import "pages/_index.scss";
+
+
 // Graphical variables
 
 
 // External libraries
 
 // @import "font-awesome";
-@import "tom-select/dist/css/tom-select.css";
-@import "star-rating.js/dist/star-rating.css";
+// @import "tom-select/dist/css/tom-select.css";
+// @import "star-rating.js/dist/star-rating.css";
+@import "bootstrap";
+
+
 
 // Your CSS partials
 // @import "components/index";
 // @import "pages/index";
-
-@import "bootstrap";
-@import "shared/_navbar";
-@import "landing/login.html";
+// @import "landing/login.html";
+@import "pages/index";
+@import "shared/navbar";

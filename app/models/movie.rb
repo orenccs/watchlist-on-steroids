@@ -3,9 +3,9 @@ class Movie < ApplicationRecord
   has_many :genres, through: :genre_movies, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
 
-  scope :by_genre, ->(genre_name) { joins(:genre_movies, :genres).where(genres: { name: genre_name }) }
+  scope :by_genre, ->(genre_name) { joins(:genres).where(genres: { name: genre_name }) }
   scope :by_release_year, ->(year) { where("release_date LIKE ?", "#{year}%") }
   scope :by_keywords, ->(keywords) { where("title LIKE ?", "%#{keywords}%") }
   scope :sorted_by, ->(sort_by) {
