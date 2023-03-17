@@ -1,5 +1,5 @@
-*{
-  background-color:#101820FF;
+* {
+  background-color: #101820ff;
 }
 
 .movie-container {
@@ -8,14 +8,15 @@
   justify-content: space-between;
   padding-top: -100px;
   margin-top: 200px;
-
+  column-count: 2;
+  column-gap: 20px;
 }
 
 .movie-box {
   width: 30%;
   margin-bottom: 30px;
-  background-color: #101820FF;
-  color: #FEE715FF;
+  background-color: #101820ff;
+  color: #fee715ff;
   border-radius: 10px;
   padding: 10px;
   position: relative;
@@ -46,7 +47,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  color: #FEE715FF;
+  color: #fee715ff;
   height: 100%;
   padding: 20px;
   opacity: 0;
@@ -74,7 +75,6 @@
   left: -13px;
 }
 
-
 .filters-container label {
   margin-right: 10px;
 }
@@ -85,8 +85,8 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  background-color: #FEE715FF;
-  color: #101820FF;
+  background-color: #fee715ff;
+  color: #101820ff;
   font-weight: bold;
 }
 
@@ -94,19 +94,19 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  background-color: #101820FF;
-  color: #FEE715FF;
+  background-color: #101820ff;
+  color: #fee715ff;
   font-weight: bold;
   cursor: pointer;
 }
 
 .filters-container input[type="submit"]:hover {
-  background-color: #FEE715FF;
-  color: #101820FF;
+  background-color: #fee715ff;
+  color: #101820ff;
 }
 
 .filters-container select:focus,
 .filters-container input[type="text"]:focus {
   outline: none;
-  box-shadow: 0 0 5px #FEE715FF;
+  box-shadow: 0 0 5px #fee715ff;
 }

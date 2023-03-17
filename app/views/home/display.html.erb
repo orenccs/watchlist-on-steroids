@@ -1,8 +1,11 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Details</title>
+</head>
+<body>
   <img id="movie-image" src="image.jpg">
 <div class="movie-box">
-
   <%= image_tag @movie.poster_url %>
   <div class="movie-title"><%= @movie.title %></div>
   <div class="movie-rating">
@@ -34,3 +37,5 @@
       movieTrailer.src += '?autoplay=1';
     });
   </script>
+</body>
+</html>

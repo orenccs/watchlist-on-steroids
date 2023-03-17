@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
   .navbar {
     display: flex;
@@ -9,7 +9,7 @@
     position: fixed;
     top: 0px;
     left: 215px;
-    width: 60%;
+    width: 100%;
     z-index: 1;
     border-radius: 23px;
 
@@ -154,7 +154,7 @@
   100% {
     transform: rotate(360deg);
   }
-=======
+}
 nav {
   background-color: #FEE715FF;
   padding: 10px;
@@ -187,5 +187,5 @@ nav a {
 nav a:hover {
   background-color: #fff;
   color: #000;
->>>>>>> d8527123a6d16a951926bf415518cac37baddd14
+
 }

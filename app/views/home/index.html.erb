@@ -1,0 +1,50 @@
+<h1>Movie List</h1>
+
+<%= form_tag(movies_path, method: :get) do %>
+  <div class="form-group">
+    <%= label_tag(:sort_by, "Sort By:") %>
+    <%= select_tag(:sort_by, options_for_select([["Title (A-Z)", "title_asc"], ["Title (Z-A)", "title_desc"], ["Release Date (Oldest First)", "release_date_asc"], ["Release Date (Newest First)", "release_date_desc"], ["Rating (Highest First)", "rating_desc"], ["Rating (Lowest First)", "rating_asc"]], params[:sort_by]), class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:keywords, "Keywords:") %>
+    <%= text_field_tag(:keywords, params[:keywords], class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:release_year, "Release Year:") %>
+    <%= text_field_tag(:release_year, params[:release_year], class: "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:genre, "Genre:") %>
+    <%= select_tag(:genre, options_for_select([["All Genres", ""], ["Action", "Action"], ["Comedy", "Comedy"], ["Drama", "Drama"], ["Fantasy", "Fantasy"], ["Horror", "Horror"], ["Mystery", "Mystery"], ["Romance", "Romance"], ["Sci-Fi", "Sci-Fi"], ["Thriller", "Thriller"]], params[:genre]), class: "form-control") %>
+  </div>
+
+  <%= submit_tag("Filter", class: "btn btn-primary") %>
+<% end %>
+
+<div class="movie-container">
+  <% @movies.each do |movie| %>
+
+ <%= link_to movie_path(movie) do %>
+    <div class="movie-box">
+      <%= image_tag movie.poster_url %>
+      <div class="movie-title"><%= movie.title %></div>
+      <div class="movie-rating">
+        <% 10.times do |i| %>
+          <% if i < movie.rating %>
+            <i class="fa-solid fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="movie-overview">
+        <%= movie.overview %>
+        <p><strong>Actors:</strong> <%= movie.actors %></p>
+      </div>
+    </div>
+   <% end %>
+  <% end %>
+</div>

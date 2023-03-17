@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "home/show"
   get "/movies/search", to: "movies#search", as: "movie_search"
 
